@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BankingEconomist</title>
+    <title>BankingEconomist - Happy New Year 2024</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -27,14 +27,43 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .new-year-wish {
+            text-align: center;
+            animation: bounce 2s infinite; /* Add New Year animation */
+        }
+
+        .new-year-wish img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
         footer {
             background-color: #333;
             color: #fff;
             text-align: center;
-            padding: 1em 0;
+            padding: 0.1em 0;
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+
+        /* Media queries for responsiveness */
+        @media screen and (max-width: 600px) {
+            section {
+                padding: 1em;
+            }
         }
     </style>
 </head>
@@ -46,12 +75,19 @@
 
 <section>
     <h2>Welcome to Banking Economist</h2>
-    <p>This website is created to post Ideas, blog posts related to Banking</p>
-
+    <p>This website is created to post ideas, blog posts related to Banking and Economics.</p>
 </section>
 
+<div class="new-year-wish">
+    <img src="newyear.jpeg" alt="Happy New Year">
+</div>
+
 <footer>
-    <p>&copy; 2023 Ronald Robin Danthis. All rights reserved.</p>
+    <p>&copy; <span id="currentYear"></span> Ronald Robin Danthis. All rights reserved.</p>
+    <script>
+        // JavaScript to insert the current year dynamically
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+    </script>
 </footer>
 
 </body>
